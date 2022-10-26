@@ -1,0 +1,173 @@
+@import "_null";
+@import "_common";
+@import "_mixin";
+@import "_popup";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,regular,500,700,900&display=swap");
+
+
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: Poppins, sans-serif;
+$fontSize: 18px;
+
+$minWidth: 320;
+$maxWidth: 1580;
+
+$md1: $maxWidth+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: rgb(255, 255, 255);
+$secondColor: rgb(59, 82, 187);
+$thirdColor: rgb(190, 74, 74);
+$qatroColor: rgb(188, 190, 74);
+//</Шрифт по умолчанию>==========================================================================================
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: $fontSize;
+	font-weight: 400;
+	font-family: $fontFamily;
+	background-color: rgb(113, 73, 177);
+	color: rgb(20, 20, 20);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.upload-box {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	width: 430px;
+	height: 250px;
+	border: 2px dashed rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+	.image-load & p{
+		display: none;
+	}
+	.image-load &{
+		justify-content: start;
+		border: none;
+	}
+	.image-load & img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+	&:hover{
+	  background-color: rgb(221, 221, 221);
+	}
+}
+.content {
+	display: none;
+	.image-load &{
+		display: block;
+	}
+}
+.row {
+	display: flex;
+	gap: 30px;
+}
+.column {
+
+}
+.sizes {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.width {
+	display: flex;
+	flex-direction: column;
+
+	label{
+		margin-bottom: 10px;
+	}
+
+	input{
+		border: 2px solid rgba(0, 0, 0, 0.5);
+		border-radius: 6px;
+		font-size: 18px;
+		padding: 5px 40px 5px 10px;
+		max-width: 200px;
+		&:focus{
+			border: 2px solid rgb(86, 56, 134);
+		}
+	}
+}
+.height {
+	display: flex;
+	flex-direction: column;
+
+	label{
+		margin-bottom: 10px;
+	}
+
+	input{
+		border: 2px solid rgba(0, 0, 0, 0.5);
+		border-radius: 6px;
+		font-size: 18px;
+		padding: 5px 40px 5px 10px;
+		max-width: 200px;
+		&:focus{
+			border: 2px solid rgb(86, 56, 134);
+		}
+	}
+}
+.checkboxes {
+	margin-bottom: 20px;
+	.column{
+		display: flex;
+		align-items: center;
+		gap: 13px;
+	}
+	.column label{
+		cursor: pointer;
+		&:hover{
+		  opacity: 0.7;
+		}
+	}
+	.column input{
+		height: 16px;
+		width: 16px;
+		accent-color: rgb(86, 56, 134);
+		cursor: pointer;
+	}
+	.column:nth-child(1){
+		width:200px;
+	}
+}
+.ratio {
+}
+.quality {
+}
+.download-button {
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	width: 100%;
+	padding: 14px 0;
+	border-radius: 8px;
+	background-color: rgb(113, 73, 177);
+	transition: background-color .2s ease 0s;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	&:hover{
+		background-color: rgb(86, 56, 134);
+	}
+}
